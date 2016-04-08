@@ -27,6 +27,8 @@ print(c1 * c2 - (2 - 4 * 𝒊)) // prints 9.0-6.0𝒊
 
 Copy `Complex.swift` and `ComplexOperator.swift` (optional) to your project. And done.
 
+You can try `ComplexNumber.playground` in Xcode. The source files are located in `ComplexNumber.playground/Sources/` folder.
+
 # HOW TO USE
 
 ## 1. Understand the datatype
