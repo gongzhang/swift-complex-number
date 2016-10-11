@@ -1,19 +1,24 @@
 import UIKit
 
-// optional custom operators for Complex:
-infix operator ^ { associativity left precedence 160 }
-infix operator * { associativity left precedence 150 }
-infix operator / { associativity left precedence 150 }
-infix operator + { associativity left precedence 140 }
-infix operator - { associativity left precedence 140 }
+precedencegroup PowerPrecedence {
+    higherThan: MultiplicationPrecedence
+    associativity: left
+    assignment: false
+}
 
-infix operator += { associativity right precedence 90 }
-infix operator -= { associativity right precedence 90 }
-infix operator *= { associativity right precedence 90 }
-infix operator /= { associativity right precedence 90 }
+infix operator ^ : PowerPrecedence
+infix operator * : MultiplicationPrecedence
+infix operator / : MultiplicationPrecedence
+infix operator + : AdditionPrecedence
+infix operator - : AdditionPrecedence
 
-prefix operator ∠ { }
-infix operator ∠ { associativity left precedence 160 }
+infix operator += : AssignmentPrecedence
+infix operator -= : AssignmentPrecedence
+infix operator *= : AssignmentPrecedence
+infix operator /= : AssignmentPrecedence
+
+prefix operator ∠
+infix operator ∠ : AdditionPrecedence
 
 //
 // NOTE:
@@ -22,7 +27,7 @@ infix operator ∠ { associativity left precedence 160 }
 //
 
 // the global imaginary unit "𝒊"
-𝒊 ^ 2 == -1
+𝒊 ^ 2 == -1 as Complex
 
 // define complex number with "𝒊"
 let c1 = 3 + 2 * 𝒊
