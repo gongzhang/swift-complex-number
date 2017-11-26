@@ -7,15 +7,6 @@ precedencegroup PowerPrecedence {
 }
 
 infix operator ^ : PowerPrecedence
-infix operator * : MultiplicationPrecedence
-infix operator / : MultiplicationPrecedence
-infix operator + : AdditionPrecedence
-infix operator - : AdditionPrecedence
-
-infix operator += : AssignmentPrecedence
-infix operator -= : AssignmentPrecedence
-infix operator *= : AssignmentPrecedence
-infix operator /= : AssignmentPrecedence
 
 prefix operator ∠
 infix operator ∠ : AdditionPrecedence
