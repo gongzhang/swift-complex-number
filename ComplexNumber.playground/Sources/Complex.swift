@@ -76,12 +76,10 @@ extension Complex {
     
 }
 
-public func ==(c1: Complex, c2: Complex) -> Bool {
-    return c1.x == c2.x && c1.y == c2.y
-}
-
 public extension Complex {
-    
+    public static func ==(lhs: Complex, rhs: Complex) -> Bool {
+        return lhs.x == rhs.x && lhs.y == rhs.y
+    }
     
     public func conjugate() -> Complex {
         return Complex(x, -y)
